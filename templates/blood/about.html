@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About Us</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .about-section {
+      padding: 60px;
+      background-color: #c32d22;
+      color: white;
+    }
+    .about-section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .about-section p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    .vision-mission {
+      padding: 40px 0;
+    }
+    .vision-mission h3 {
+      font-size: 28px;
+      color: #c32d22;
+    }
+    .vision-mission p {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Include Navbar -->
+  {% include "blood/navbar.html" %}
+
+  <!-- About Us Section -->
+  <div class="about-section text-center">
+    <h2>About Us</h2>
+    <p>
+      The Blood Bank Management System is dedicated to making the process of donating and receiving blood easier, more efficient, and reliable.
+      Our platform connects patients in need with donors in real-time, ensuring timely and transparent transactions.
+    </p>
+    <p>
+      Our mission is to streamline the blood donation process, improve accessibility, and foster a life-saving community. By leveraging technology, 
+      we ensure that blood is available to those who need it the most at the right time.
+    </p>
+  </div>
+
+  <!-- Vision and Mission Section -->
+  <div class="container vision-mission">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Our Mission</h3>
+        <p>
+          Our mission is to create a centralized platform that connects blood donors and recipients across various locations.
+          We aim to make blood donation accessible and convenient, reducing shortages and ensuring blood is available to those who need it.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <h3>Our Vision</h3>
+        <p>
+          Our vision is to build a community where no life is lost due to a lack of available blood. We strive to be a leader in the 
+          healthcare industry by making blood donation an integral part of our everyday life.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Features Section -->
+  <div class="container">
+    <h3 class="text-center mt-5" style="color: #c32d22;">Key Features</h3>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <h5><i class="fas fa-tint"></i> Real-Time Matching</h5>
+        <p>
+          Our system allows donors and patients to be matched in real-time, ensuring timely blood availability for emergencies and scheduled needs.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h5><i class="fas fa-clock"></i> 24/7 Availability</h5>
+        <p>
+          The Blood Bank Management System is available around the clock, making it easier for donors and recipients to access the platform at any time.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h5><i class="fas fa-lock"></i> Secure and Reliable</h5>
+        <p>
+          We prioritize security and reliability in every step of the process. All transactions are tracked, and personal data is kept confidential.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Footer -->
+  {% include "blood/footer.html" %}
+
+</body>
+</html>

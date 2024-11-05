@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <style>
+        .xyz {
+            margin-bottom: 0px;
+            background-image: url('{% static "image/homepage.jpg" %}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 80vh;
+        }
+
+        .features {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .cta-button {
+            background-color: #d9534f;
+            color: white;
+            border-radius: 25px;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #c9302c;
+        }
+
+        .statistics-section {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .statistics-section h2 {
+            margin-bottom: 30px;
+        }
+
+        .statistics {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .stat-box {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            width: 200px;
+            background-color: #fff;
+        }
+
+        .stat-box h3 {
+            color: #d9534f;
+            font-size: 36px;
+        }
+
+        .stat-box p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+
+<body>
+    {% include "blood/navbar.html" %}
+    <br>
+    <section id="section-jumbotron" style="margin-bottom: 0px;" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center xyz">
+        <div class="container text-center">
+            <h1 class="display-4 text-white">Save Lives, Donate Blood</h1>
+            <p class="lead text-white">Join the cause and help us build a healthier community</p>
+          
+        </div>
+    </section>
+
+
+
+    <!-- New Section: Why Donate Blood? -->
+    <section class="features text-center">
+        <div class="container">
+            <h2>Why Donate Blood?</h2>
+            <p>Every blood donation is a lifeline to someone in need. Your contribution makes a real difference!</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Save Lives</h3>
+                    <p>Your blood donation can save up to three lives.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Health Benefits</h3>
+                    <p>Donating blood can improve your heart health and reduce the risk of cancer.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Community Impact</h3>
+                    <p>Help your community stay healthy by supporting the local blood supply.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section: Statistics -->
+    <section class="statistics-section">
+        <div class="container">
+            <h2>Our Impact So Far</h2>
+            <div class="statistics">
+                <div class="stat-box">
+                    <h3>10,000+</h3>
+                    <p>Blood Donations</p>
+                </div>
+                <div class="stat-box">
+                    <h3>5,000+</h3>
+                    <p>Registered Donors</p>
+                </div>
+                <div class="stat-box">
+                    <h3>20+</h3>
+                    <p>Hospitals Supported</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include "blood/footer.html" %}
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .contact-section {
+      padding: 50px 0;
+    }
+    .contact-section h2 {
+      color: #c32d22;
+      margin-bottom: 20px;
+    }
+    .contact-section .form-control {
+      border-radius: 0;
+    }
+    .btn-danger {
+      background-color: #c32d22;
+      border: none;
+    }
+    .contact-info {
+      margin-top: 30px;
+      font-size: 16px;
+      color: #6c757d;
+    }
+    .alert {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Include Navbar -->
+  {% include "blood/navbar.html" %}
+
+  <!-- Contact Us Section -->
+  <div class="container contact-section">
+    <h2>Contact Us</h2>
+    
+    <!-- Display messages -->
+    {% if messages %}
+      <div class="alert alert-dismissible fade show {% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
+        {% for message in messages %}
+          {{ message }}<br>
+        {% endfor %}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {% endif %}
+
+    <div class="row">
+      <div class="col-md-6">
+        <form action="/submit-contact-form/" method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+      </div>
+      <div class="col-md-6 contact-info">
+        <h5>Contact Information</h5>
+        <p>
+          <strong>Email:</strong> dg@bloodbank.com<br>
+          <strong>Phone:</strong> 91+7824675469<br>
+          <strong>Address:</strong> 123 Blood Bank Street, Tirupur,India
+        </p>
+        <h5>Working Hours</h5>
+        <p>
+          <strong>Monday to Friday:</strong> 9:00 AM - 6:00 PM<br>
+          <strong>Saturday:</strong> 10:00 AM - 4:00 PM<br>
+          <strong>Sunday:</strong> Closed
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Footer -->
+  {% include "blood/footer.html" %}
+
+  <!-- Include Bootstrap JS (for alert dismissal) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
